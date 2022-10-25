@@ -30,8 +30,6 @@ class ApplicationController < Sinatra::Base
     )
   end
 
-
-
   get "/articles_basics" do
     article = Article.all
     article.to_json(only: [:id, :title, :description], include: [:author] )
